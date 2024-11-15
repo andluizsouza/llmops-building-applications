@@ -11,3 +11,25 @@ This repository hosts my customized version of the course [LLMOps: Building Real
 ### [1. Introduction to LLMOps](/01_into_to_llmops/)
 
 ### [2. Working with LLMs](/02_working_with_llms/)
+
+## Preparing the Environment
+
+Create a `python3.9` virtual environment in the repository root (only once):
+
+```bash
+sudo apt-get install python3.9-venv
+python3.9 -m venv venv
+```
+
+Activate this environment:
+
+```
+source venv/bin/activate
+```
+
+Install libraries:
+
+
+```bash
+make install
+```
