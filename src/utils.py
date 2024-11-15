@@ -1,12 +1,10 @@
 import os
-import logging
-import google.generativeai as genai
 from dotenv import load_dotenv
-
+import google.generativeai as genai
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 
-def setup_google_credentials():
+def setup_credentials():
     
     load_dotenv(".env")
     GOOGLE_API_KEY = os.environ["GOOGLE_API_KEY"]

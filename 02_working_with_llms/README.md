@@ -60,3 +60,40 @@ The bulk of the information in this lesson is contained in the Jupyter notebook,
 - **Role-Playing**: Implementing role-playing in prompts, where the model assumes a specific role like a research assistant, can improve the quality and relevance of responses.
 
 Checkout the Jupyter Notebook: [1_prompt_engineering_overview_part1.ipynb](/02_working_with_llms/1_prompt_engineering_overview_part1.ipynb)
+
+
+## 2.4 Advanced Prompt Engineering
+
+There are a variety of popular prompting techniques, with more being discovered every day. In the above video and below Jupyter notebook, we will walk through many of them in detail. Here, we've explained some of the bigger ones we'll be covering:
+
+**1. Few-Shot In-Context Learning**
+
+This approach involves feeding the model high-quality examples to steer its responses more effectively. For instance, to train a model to classify text as offensive or non-offensive, diverse examples of both categories are provided. This diversity, including failure cases, enhances the model's ability to accurately interpret and respond to similar tasks.
+
+Example: A piece of text, "I respectfully disagree with your opinion," is presented to the model. By previously providing few-shot examples, the model is more adept at correctly classifying this as non-offensive, demonstrating the effectiveness of this method.
+
+**2. Chain of Thought (CoT)**
+
+The CoT technique guides the model through a series of logical steps, improving its ability to handle complex tasks that require deeper analysis. This is particularly useful for tasks that involve multiple reasoning stages.
+
+Example: In a movie recommendation scenario, the model is instructed step-by-step to analyze various movie attributes and user requests. This structured approach allows the model to provide a well-reasoned and accurate recommendation.
+
+**3. ReAct Framework**
+
+ReAct combines LLMs with external tools, enhancing performance and reducing hallucinations—a common challenge with current models. This method allows the model to access and integrate external information for more accurate responses.
+
+Example: To determine the winner of the 2023 NBA finals, React leverages a search engine to supplement the model's knowledge, demonstrating its capability to provide accurate, up-to-date information.
+
+**4. Retrieval-Augmented Generation (RAG)**
+
+RAG enhances prompts with contextually relevant information extracted from external databases or knowledge bases. This technique significantly improves the model's reliability by grounding its responses in specific, task-relevant data.
+
+Example: In querying about a course, RAG utilizes text chunks and embeddings stored in vector storage to provide a detailed and accurate description of the course content.
+
+**5. Prompt Chaining**
+
+Prompt chaining involves breaking down a complex task into smaller subtasks, each addressed through a separate prompt. This method is particularly effective in processing and synthesizing large amounts of information.
+
+Example: After analyzing movie recommendations, a second prompt is used to extract and present a concise user response, demonstrating the model's ability to handle detailed, multi-step processes.
+
+Checkout the Jupyter Notebook: [1_prompt_engineering_overview_part2.ipynb](/02_working_with_llms/1_prompt_engineering_overview_part2.ipynb)
