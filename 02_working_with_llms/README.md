@@ -97,3 +97,13 @@ Prompt chaining involves breaking down a complex task into smaller subtasks, eac
 Example: After analyzing movie recommendations, a second prompt is used to extract and present a concise user response, demonstrating the model's ability to handle detailed, multi-step processes.
 
 Checkout the Jupyter Notebook: [1_prompt_engineering_overview_part2.ipynb](/02_working_with_llms/1_prompt_engineering_overview_part2.ipynb)
+
+## 2.5 Logging, Tracking, and Debugging Prompts
+
+As you scale your LLM applications, it's crucial to track and analyze prompts effectively. Comet provides a suite of tools for this purpose, including functionalities for storing results, tracking different template versions, and managing prompt chains. This capability is particularly useful when dealing with complex prompt sequences that require distinct logging approaches.
+
+The ability to compare prompts across various models, like GPT-3.5 or GPT-4, offers valuable insights into model performance. Documenting relevant metadata, such as token usage and cost, is also a key part of this process.
+
+In this lesson, we will be building a system that tags machine learning paper abstracts. The process begins with selecting a model and creating prompts to extract tags, which are mentions of model names. The output is a JSON object listing these tags.
+
+This pipeline, a simplified version of a larger project, demonstrates a typical workflow for extracting and converting information and assessing output quality. The Comet tools are used to log, track, and debug prompts. Throughout the below notebook, you will get the chance to use Comet to collect and visualize your data in a way that makes it simple for you to improve your model output.
