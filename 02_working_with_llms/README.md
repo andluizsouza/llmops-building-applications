@@ -107,3 +107,59 @@ The ability to compare prompts across various models, like GPT-3.5 or GPT-4, off
 In this lesson, we will be building a system that tags machine learning paper abstracts. The process begins with selecting a model and creating prompts to extract tags, which are mentions of model names. The output is a JSON object listing these tags.
 
 This pipeline, a simplified version of a larger project, demonstrates a typical workflow for extracting and converting information and assessing output quality. The Comet tools are used to log, track, and debug prompts. Throughout the below notebook, you will get the chance to use Comet to collect and visualize your data in a way that makes it simple for you to improve your model output.
+
+Checkout the Jupyter Notebook: [2_prompt_tracking_comet.ipynb](/02_working_with_llms/2_prompt_tracking_comet.ipynb)
+
+## 2.6 Fine-tuning and Customizing LLMs
+
+In this lesson, we'll explore the process of fine-tuning large language models. In our demonstration, we walk through fine-tuning an emotion classifier using a base LLM. The process involves preparing and processing the dataset, fine-tuning the model, and leveraging LLM Ops tools for tracking and iterating. Our dataset is split into training and validation sets, formatted in JSON with pairs of prompts and completions.
+
+We use the Transformers and Datasets libraries from Hugging Face, among others, to facilitate this process. The fine-tuning involves configuring training arguments, setting hyperparameters, and executing the training process. We also discuss the importance of logging and tracking experiments for reproducibility and evaluation.
+
+After fine-tuning, we use Comet to inspect and analyze the results. This tool provides insights into the model's performance, such as loss metrics, and allows for the exploration of different configurations and experiments. We emphasize the importance of artifacts and checkpoints for reproducibility and further analysis.
+
+Watch the above video and follow along in the below notebook for a more detailed guide to fine-tuning, but here we've broken down the main steps from the video:
+
+**Step 1: Select a Base Model**
+
+The first step in fine-tuning LLMs involves choosing a suitable base model. Open-source platforms like Hugging Face's Hub offer a variety of models to start with. The choice of the base model should align with your specific requirements and interests.
+
+**Step 2: Prepare Your Dataset**
+
+Your fine-tuning dataset needs to be formatted appropriately. This dataset is crucial as it will directly influence the model's learning and adaptability to the task at hand.
+
+**Step 3: Fine-Tune the Model**
+
+Utilizing libraries like Transformers, you can fine-tune your chosen model. Fine-tuning LLMs can involve various techniques, such as reinforcement learning from human feedback, instructional tuning, and self-supervised learning. It's important to choose the most effective methods based on your specific use case.
+
+**Step 4: Evaluate and Debug**
+
+A critical part of the process is the evaluation and debugging of the fine-tuned model. This step ensures the model's quality and performance improvements. Remember, fine-tuning is an iterative process; hence, using tools like Comet is vital for tracking and optimizing model performance over time.
+
+Additionally, this notebook exercise works a bit differently than others in this course in that it actually spans more than one module. The last two sections in this notebook, titled "Register Model" and "Deploy Model," will be covered later in Lesson 3. We've included them in this notebook because they depend on the model we train in this lesson, and we want to give you the option of reusing this notebook later rather than duplicating your work. For now, however, you can safely ignore them.
+
+Checkout the Jupyter Notebook: [3_fine_tuning.ipynb](/02_working_with_llms/3_fine_tuning.ipynb)
+
+## 2.7 Evaluating LLMs
+
+Evaluating large language models (LLMs) like GPT-4 is a complex task. Traditional machine learning benchmarks and metrics often fall short, necessitating the creation of high-quality, bespoke evaluation datasets. This process is labor-intensive, involving thorough data cleaning and preparation.
+
+Evaluations can be both qualitative and quantitative. While metrics such as accuracy, F1 score, semantic similarity, BLEU, and ROUGE are useful, they might not always suffice. Qualitative aspects like fluency, helpfulness, and safety are often assessed through human evaluation, which has become increasingly popular for its effectiveness in providing nuanced insights.
+
+Given the lack of reliable automated benchmarks, human evaluation plays a crucial role in assessing the performance of models like Llama 2, GPT-4, and others. This method helps in understanding how well these models perform on specific tasks of interest.
+
+Additionally, an emerging trend is to use LLMs themselves for evaluation. This involves setting up specific criteria or rubrics to judge the quality of model outputs for particular use cases.
+
+In our demo project, we evaluate an emotion classifier fine-tuned on Flan-T5. The process includes:
+
+1. **Logging our data with Comet**: We utilize Comet for logging and debugging our model. This includes importing the Comet LLM library for prompt logging and evaluation.
+
+2. **Inspecting Model Performance**: We inspect the model's performance on actual examples and generate confusion matrices. This helps in understanding the model's proficiency in a multi-label classification task, and identifies areas of weakness for further fine-tuning. All of this is done using Comet.
+
+3. **Comparative Analysis**: As a follow-up exercise, comparing the fine-tuned model with other models like GPT-3.5 Turbo and GPT-4 is recommended. This comparison helps in assessing the quality of both the dataset and the fine-tuning approach.
+
+4. **Exploring Comet's Capabilities**: The final part of the demo involves going deeper into Comet to review logged results. This helps in providing a comprehensive view of the model's performance.
+
+Effective evaluation of LLMs requires a combination of quantitative metrics, qualitative analysis, and human judgment. Tools like Comet enhance this process, enabling better insight and iterative improvement of models. As the field evolves, these tools will continue to become more sophisticated, simplifying the evaluation process.
+
+Checkout the Jupyter Notebook: [4_evaluation.ipynb](/02_working_with_llms/4_evaluation.ipynb)
